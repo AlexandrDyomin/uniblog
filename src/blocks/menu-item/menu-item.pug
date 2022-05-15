@@ -1,0 +1,10 @@
+include ../tooltip/tooltip.pug
+
+mixin menu-item(text, url="#", tooltip = "")
+  div.menu-item(class=attributes.class)
+    a.menu-item__link(href= url)=text
+
+    if tooltip
+      span.menu-item__icon
+      div.menu-item__tooltip
+        +tooltip(text, tooltip)

@@ -1,0 +1,22 @@
+.tooltip {
+  border: 0.256rem solid #EAEEF5;
+  border-radius: 0.5rem;
+  
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  background: #fff;
+
+  &__title {
+    margin-bottom: 0.9rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: $greyTooltip;
+  }
+}

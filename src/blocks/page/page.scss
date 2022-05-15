@@ -1,0 +1,85 @@
+.page {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+
+  &__nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    flex-grow: 1;
+    max-width: 30rem;
+    min-width: 26rem;
+    height: 100vh;
+    transition: transform .2s linear; 
+  }
+
+  .page__nav_open {
+    transform: translateX(0);
+
+    .page__burger {
+      transform: rotateY(180deg);
+    }
+
+    .side-bar {
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: -18px;
+    height: 16px;
+    width: 16px;
+    border: none;
+    background: url("../images/arrow.svg") no-repeat center;
+    transition: transform .3s linear .3s;
+  }
+
+  &__burger:focus {
+    outline: 2px dotted #f0efef;
+  }
+
+  &__main {
+  	width: calc(100% - 30rem);
+  }
+
+  @media (max-width: 950px) {
+    &__nav {
+      max-width: 26rem;
+    }
+
+    &__main {
+      width: calc(100% - 26rem);
+    }
+  }
+
+  @media (max-width: 916px) {
+    & {
+      padding-left: 20px;
+    }
+
+    &__nav {
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      max-width: none;
+      border-right: 20px solid $red;
+      transform: translateX(calc(-100% + 20px));
+    }
+
+    &__burger {
+      display: block;
+    }
+
+    &__main {
+      width: 100%;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,17 @@
+.modal-item {
+	display: flex;
+
+	.input {
+		flex: 1;
+		height: auto;
+		border-right: none;
+		font-weight: 400;
+		font-size: 1.5rem;
+		line-height: 1.2;
+		color: $lightGrey2;
+
+		&:focus {
+			outline-offset: -3px;
+		}
+	}
+}

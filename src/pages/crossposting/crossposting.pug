@@ -1,0 +1,61 @@
+extends ../../layouts/layout.pug
+
+block styles
+  link(rel="stylesheet" href="crossposting.css")
+
+block variables
+  - let title = "Кросспостинг"
+
+block mixins
+  include ../../blocks/status-panel/status-panel
+  include ../../blocks/card/card
+
+block scripts
+  script(src="../vendors-node_modules_air-datepicker_index_es_js/vendors-node_modules_air-datepicker_index_es_js.js")
+  script(src="crossposting.js" defer) 
+
+block content
+  template#wrap
+    div.cards 
+      main
+        div.cards__view
+      footer.cards__footer
+        +status-panel("final")
+
+  template#card 
+    +card()
+    
+  template#slide
+    div.card__slide
+      img.card__img
+
+  template#modal
+    div.mask
+      div.modal
+        h3.modal__title
+        p.modal__text
+        div.modal__icons
+      button.button.button_stretchable.button_beautiful
+
+  template#modal-item
+    div.modal-item.modal__item
+      input.input
+      button.button(type="button")
+
+
+  div.crossposting
+    header.crossposting__header
+      include ../../blocks/social-network-list/social-network-list
+    main
+      form.crossposting__form#post(name="post")
+        div.crossposting__top
+          div.crossposting__editor
+            include ../../blocks/editor/editor
+          div.crossposting__calendar
+            include ../../blocks/calendar/calendar
+
+        div.crossposting__files
+          include ../../blocks/files/files
+
+    footer.crossposting__footer
+      +status-panel()

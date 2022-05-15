@@ -1,0 +1,31 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    
+    block seo
+      meta(name="description" content="")
+      meta(name="autor" content="")
+
+    block styles
+
+    block mixins
+    
+    block scripts
+
+    block variables
+      - let title = ""
+
+    title= title
+  
+  body
+    div.container 
+      div.page 
+        nav.page__nav
+          include ../blocks/side-bar/side-bar
+          button.page__burger(type="button" title="Кнопка открытия бокового меню")  
+        div.page__main
+          block content
+      

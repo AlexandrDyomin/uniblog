@@ -1,0 +1,106 @@
+.custom-btn {
+  display: inline-block;
+  padding: 0.3rem;
+
+  .custom-btn__checkbox {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+
+    &_fb {
+      background: url("../images/facebook.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &_inst {
+      background: url("../images/instagram.svg") no-repeat center;
+      background-size: contain;
+    }
+    
+    &_tg {
+      background: url("../images/telegram.svg") no-repeat center;
+      background-size: contain;
+    }
+    
+    &_vk {
+      background: url("../images/vk.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &_p {
+      background: url("../images/p.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &_ytb {
+      background: url("../images/youtube.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &_twt {
+      background: url("../images/twitter.svg") no-repeat center;
+      background-size: contain;
+    }
+
+    &_tik-tok {
+      background: url("../images/tik-tok.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .custom-btn__input {
+    position: absolute;
+    width: 0;
+    height:0;  
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+  }
+
+  .custom-btn__style {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(25%, 25%);
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    background: $darkGrey url("../images/+.svg") no-repeat center;
+    transition: background-color .2s linear,
+                box-shadow .2s linear;
+  }
+
+  .custom-btn__input:checked + .custom-btn__style {
+    background: $green url("../images/mark.svg") no-repeat center;
+    background-size: 80%;
+  }
+
+  .custom-btn__input:disabled + .custom-btn__style {
+    background-color: $lightGrey   }
+
+  .custom-btn__input:focus + .custom-btn__style {
+    outline: 2px dotted black;
+    outline-offset: 1px;
+  }
+
+  .custom-btn__input:checked:hover + .custom-btn__style {
+    background-color: darken($color: $green, $amount: 5%);
+    box-shadow: 0 0 0.5rem 0.1rem $green;
+  }
+  
+  .custom-btn__input:not(.custom-btn__input:checked):hover + .custom-btn__style {
+    background-color: darken($color: $darkGrey, $amount: 5%);
+    box-shadow: 0 0 0.5rem 0.1rem $darkGrey;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+}

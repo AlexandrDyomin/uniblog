@@ -1,0 +1,91 @@
+.files {
+  display: flex;
+  align-items: center;
+
+  &__btn,
+  &__preview {
+    border: 2.07px solid;
+    border-radius: 1rem;
+    margin-right: 2.1rem;
+    height: 8rem;
+    flex-shrink: 0;
+  }
+
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__cards { 
+    display: flex;
+    padding: 0 1rem;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  &__cards::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &__btn{
+    display: flex;
+    align-items: flex-end;
+    min-width: max-content;
+    padding: 1rem;
+    border-color: #EAEEF5;
+    background: white url("../images/files.svg") no-repeat 50% 40%;
+    background-size: 30%;
+    cursor: pointer;
+  }
+
+  &__preview {
+    position: relative;
+    width: 10rem;
+    background: #EAEAEA;
+    border-color: #DDDDDD;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &_small {
+      width: 40%;
+      height: 40%;
+      object-fit: contain;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    background: rgba($lightGrey, 0.5);
+    color: white;
+
+
+    &:hover {
+      background: $red;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__preview:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,87 @@
+@import "src/layouts/layout";
+@import "src/blocks/social-network-list/social-network-list";
+@import "src/blocks/custom-btn/custom-btn";
+@import "src/blocks/button/button";
+@import "src/blocks/button/_ugly";
+@import "src/blocks/status-panel/status-panel";
+@import "src/blocks/button/_beautiful";
+@import "src/blocks/editor/editor";
+@import "src/blocks/files/files";
+@import "src/blocks/calendar/calendar";
+@import "node_modules/air-datepicker/air-datepicker";
+
+
+.crossposting {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+
+  &_disabled {
+    display: none;
+  }
+ 
+  &__header {
+    position: sticky;
+    top:0;
+    bottom: 0;
+    z-index: 1;
+    margin-bottom: 1rem;
+  }
+
+  main,
+  .crossposting__form {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .crossposting__form {
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+
+    @media (max-width: 600px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__editor {
+    margin-right: 2rem;
+    flex-grow: 1;
+    min-width: 30rem;
+
+    @media (max-width: 600px) {
+      height: 1px;
+      margin-right: 0;
+      margin-top: 1rem;
+
+    }
+  }
+
+  &__calendar {
+    flex-basis: 36rem;
+    min-width: 36rem;
+
+    @media (max-width: 600px) {
+      flex-basis: auto;
+    }
+  }
+
+  &__files {
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+
+
+  &__footer {
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
+}

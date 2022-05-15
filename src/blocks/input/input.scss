@@ -1,0 +1,16 @@
+.input {
+	border: 1px solid $lightGrey;
+	height: 3rem;
+
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	letter-spacing: 2px;
+	padding: 0 1rem;
+
+	&:focus {
+    outline: 0.3rem dotted black;
+    outline-offset: 0.1rem;
+  }
+}

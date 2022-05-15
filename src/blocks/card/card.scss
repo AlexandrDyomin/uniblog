@@ -1,0 +1,114 @@
+.card {
+	margin: 15px;
+	flex-basis: calc(100%/12 * 4 - 30px);
+	font-size: 1.8rem;
+	line-height: 1.2;
+	color: black;
+	@include grid(1060px, 6, 15px);
+	@include grid(576px, 12, 15px);
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	&__logo {
+		width: 4rem;
+		height: 4rem;
+		margin-right: 1.6rem;
+		flex-shrink: 0;
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+
+		&_small {
+			width: 40%;
+			height: 40%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: contain;
+		}
+	}
+
+	&__accaunt {
+		margin-right: 3rem;		
+	}
+
+	&__btn {
+		background: none;
+		border: none;
+		padding: 0;
+		color: $blue;
+		font-size: inherit;
+		font-weight: inherit;
+		text-align: end;
+		margin-left: auto;
+		transition: color .2s linear;
+
+		&:hover,
+		&:focus {
+    	color: lighten($color: $blue, $amount: 15%);
+		}
+
+		&:focus {
+			outline: 0.3rem dotted black;
+		}
+	}
+
+	&__middle {
+		position: relative;
+		margin-bottom: 1.5rem;
+
+		&:hover {
+			.tns-controls button {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__slide {
+		position: relative;
+		height: 30rem;
+		background: $lightGrey;
+		font-size: 30px;
+	}
+
+	&__counter {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		width: 4.2rem;
+		height: 2.8rem;
+		background: rgba($bgCounter, 0.7);
+		color: white;
+		border-radius: 5rem;
+		text-align: center;
+		line-height: 2.8rem;
+		font-size: 1.2rem;
+		z-index:1;
+
+		&_disabled {
+			display: none;
+		}
+	}
+
+	&__file-name {
+		position: absolute;
+		bottom: 1rem;
+		width: 100%;
+		text-align: center;
+		font-size: 1.5rem;
+	}
+}
