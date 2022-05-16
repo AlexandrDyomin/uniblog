@@ -28,18 +28,7 @@ function handleBtnNextClick(fileList) {
 			.classList.add("crossposting_disabled");
 
 		// загрузим стили
-		let loadStyles = new Promise((resolve, reject) => {
-			if (document.querySelector("link[href='cards.css']")) {
-				return resolve("Стили загружены");
-			}
-
-			let link = document.createElement("link");
-			link.rel = "stylesheet";
-			link.href = "cards.css";
-			document.head.append(link);
-			link.onload = () => resolve("Стили загружены");
-			link.onerror = () => reject(new Error("Не удалось загрузить стили"));
-		});
+		let promiseLoadStyles = loadStyles("cards.css");
 
 		let cardTempl = document.querySelector("#card");
 		let logo = cardTempl.content.querySelector(".card__logo > .card__img");
@@ -128,14 +117,14 @@ function handleBtnNextClick(fileList) {
 				});
 			})();
 
-			Promise.all([loadStyles, loadTns]).then(() => {
+			Promise.all([promiseLoadStyles, loadTns]).then(() => {
 				render(docFragment);
-				addListener();
+				addListeners(formData);
 			});
 		} else {
-			Promise.all([loadStyles]).then(() => {
+			Promise.all([promiseLoadStyles]).then(() => {
 				render(docFragment);
-				addListener();
+				addListeners(formData);
 			});
 		}
 	} else {
@@ -143,10 +132,12 @@ function handleBtnNextClick(fileList) {
 	}
 }
 
+
 function handleSliderIndexChanged(e) {
 	let counter = e.container.closest(".card__middle").children[0];
 	let x = (counter.textContent = e.displayIndex + "/" + e.pages);
 }
+
 
 function render(docFragment) {
 	let wrapTemp = document.querySelector("#wrap");
@@ -157,8 +148,10 @@ function render(docFragment) {
 	document.querySelector(".page__main").append(wrapClone);
 }
 
-function addListener() {
+
+function addListeners(formData) {
 	let btnBack = document.querySelector(".status-panel__btn");
+	let btnPublish = document.querySelector(".status-panel__public");
 
 	if (btnBack) {
 		btnBack.onclick = async () => {
@@ -168,6 +161,35 @@ function addListener() {
 			handleBtnBackClick();
 		};
 	}
+
+	if (btnPublish) {
+		btnPublish.onclick = (e) => {
+			e.preventDefault();
+			let style = loadStyles("modal.css");
+			let handle = import(
+				"./handleBtnPublicClick.js"
+			);
+
+			Promise.all([style, handle])
+				.then(result => result[1].default(formData))
+		};
+	}
+}
+
+
+function loadStyles(href) {
+	return new Promise((resolve, reject) => {
+		if (document.querySelector(`link[href='${href}']`)) {
+			return resolve("Стили загружены");
+		}
+
+		let link = document.createElement("link");
+		link.rel = "stylesheet";
+		link.href = href;
+		document.head.append(link);
+		link.onload = () => resolve("Стили загружены");
+		link.onerror = () => reject(new Error("Не удалось загрузить стили"));
+	});
 }
 
 export default handleBtnNextClick;

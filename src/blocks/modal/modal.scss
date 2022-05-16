@@ -1,10 +1,12 @@
 .modal {
 	text-align: center;
 	width: fit-content;
+	max-width: 100%;
 	border: 2.56px solid $borderModal;
 	padding-top: 3rem;
 	background: white;
 	border-radius: 10px;
+	overflow: auto;
 
 	&__title {
 		margin-bottom: 1.4rem;
@@ -22,7 +24,7 @@
 
 	&__text,
 	&__icons {
-		margin-bottom: 3.5rem;
+		margin-bottom: calc(3.5rem - 10px);
 	}
 
 	&__link {
@@ -41,24 +43,11 @@
 		padding: 0 8rem;
 	}
 
-	&__icons {
-		display: flex;
-		flex-flow: wrap;
-		justify-content: space-between;
-
-		@media (max-width: 473px) {
-			justify-content: start;
-		}
-	}
-
 	&__icon {
+		display: inline-block;
 		width: 4.3rem;
 		height: 4.3rem;
-
-		@media (max-width: 473px) {
-			margin: 10px;
-
-		}
+		margin: 10px;
 
 		img {
 			width: 100%;

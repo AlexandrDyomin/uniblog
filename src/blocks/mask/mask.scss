@@ -1,5 +1,6 @@
 .mask {
-	position: absolute;
+	position: fixed;
+	z-index: 2;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -9,4 +10,5 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow-y: auto; 
 }
