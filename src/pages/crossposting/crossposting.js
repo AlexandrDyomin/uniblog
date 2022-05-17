@@ -1,5 +1,6 @@
 import "../../layouts/layout";
 import "../../blocks/calendar/calendar";
+import "../../blocks/editor/editor";
 
 
 // проверка наличия сообщения

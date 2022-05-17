@@ -1,7 +1,7 @@
 extends ../../layouts/layout.pug
 
 block styles
-  link(rel="stylesheet" href="crossposting.css")
+  link(rel="stylesheet" href="css/crossposting.css")
 
 block variables
   - let title = "Кросспостинг"
@@ -11,8 +11,7 @@ block mixins
   include ../../blocks/card/card
 
 block scripts
-  script(src="../vendors-node_modules_air-datepicker_index_es_js/vendors-node_modules_air-datepicker_index_es_js.js")
-  script(src="crossposting.js" defer) 
+  script(src="js/crossposting.js" defer) 
 
 block content
   template#wrap

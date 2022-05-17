@@ -28,7 +28,7 @@ function handleBtnNextClick(fileList) {
 			.classList.add("crossposting_disabled");
 
 		// загрузим стили
-		let promiseLoadStyles = loadStyles("cards.css");
+		let promiseLoadStyles = loadStyles("css/cards.css");
 
 		let cardTempl = document.querySelector("#card");
 		let logo = cardTempl.content.querySelector(".card__logo > .card__img");
@@ -165,7 +165,7 @@ function addListeners(formData) {
 	if (btnPublish) {
 		btnPublish.onclick = (e) => {
 			e.preventDefault();
-			let style = loadStyles("modal.css");
+			let style = loadStyles("css/modal.css");
 			let handle = import(
 				"./handleBtnPublicClick.js"
 			);
@@ -177,7 +177,7 @@ function addListeners(formData) {
 }
 
 
-function loadStyles(href) {
+export function loadStyles(href) {
 	return new Promise((resolve, reject) => {
 		if (document.querySelector(`link[href='${href}']`)) {
 			return resolve("Стили загружены");

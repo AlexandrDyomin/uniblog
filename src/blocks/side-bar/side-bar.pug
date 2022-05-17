@@ -5,26 +5,26 @@ include ../../blocks/menu-item/menu-item
 div.side-bar
   header.side-bar__header
     h1
-      a.side-bar__link(href="../index/index.html" title="На главную страницу") Uniblog
+      a.side-bar__link(href="index.html" title="На главную страницу") Uniblog
 
   ul.side-bar__nav
     li.side-bar__item
-      +menu-item("Главная", "../index/index.html")(class= title === "Uniblog" ? "menu-item_active" : "")
+      +menu-item("Главная", "index.html")(class= title === "Uniblog" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Кросспостинг", "../crossposting/crossposting.html", "Публикуйте контент в несколько соцсетей сразу")(class= title === "Кросспостинг" ? "menu-item_active" : "")
+      +menu-item("Кросспостинг", "crossposting.html", "Публикуйте контент в несколько соцсетей сразу")(class= title === "Кросспостинг" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Мой сайт", "../store/my-site.html", "Создайте свой сайт-визитку за несколько кликов")(class= title === "Мой сайт" ? "menu-item_active" : "")
+      +menu-item("Мой сайт", "../stosite.html", "Создайте свой сайт-визитку за несколько кликов")(class= title === "Мой сайт" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Магазин", "../store/store.html", "Создайте товары прямо на сервисе и продавайте их через сайт")(class= title === "Магазин" ? "menu-item_active" : "")
+      +menu-item("Магазин", "store.html", "Создайте товары прямо на сервисе и продавайте их через сайт")(class= title === "Магазин" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Аналитика", "../analytics/analytics.html")(class= title === "Аналитика" ? "menu-item_active" : "")
+      +menu-item("Аналитика", "analytics.html")(class= title === "Аналитика" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Дополнительно", "../additionally/additionally.html")(class= title === "Дополнительно" ? "menu-item_active" : "")
+      +menu-item("Дополнительно", "additionally.html")(class= title === "Дополнительно" ? "menu-item_active" : "")
     li.side-bar__item
-      +menu-item("Уведомления", "../notifications/notifications.html")(class= title === "Уведомления" ? "menu-item_active" : "")
+      +menu-item("Уведомления", "notifications.html")(class= title === "Уведомления" ? "menu-item_active" : "")
         span.side-bar__notify 2
     li.side-bar__item
-      +menu-item("Трифы", "../tariffs/tariffs.html")(class= title === "Тарифы" ? "menu-item_active" : "")
+      +menu-item("Трифы", "tariffs.html")(class= title === "Тарифы" ? "menu-item_active" : "")
 
   footer.side-bar__footer
-    +menu-item("Личный кабинет", "../profile/profile.html")(class= title === "Личный кабинет" ? "menu-item_active" : "")
+    +menu-item("Личный кабинет", "profile.html")(class= title === "Личный кабинет" ? "menu-item_active" : "")
