@@ -1,7 +1,7 @@
 function handleBtnPublicClick(formData) {
 	document.documentElement.classList.add("no-scroll");
 	let networks = formData.getAll("network");
-	let iconDir = "../images/";
+	let iconDir = "images/";
 
 	let modalClone = modalPost.content.cloneNode(true);
 	let icons = modalClone.querySelector(".modal__icons");
