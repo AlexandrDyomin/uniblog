@@ -10,7 +10,8 @@ function handleBtnNextClick(fileList) {
 
 	let files = formData.getAll("files");
 	if (!formData.has("network")) {
-		console.log("Выбирите соцсети, в которых хотите опубликовать свой пост");
+		showModal("Выбирите соцсети, в которых хотите опубликовать свой пост");
+
 		return;
 	}
 
@@ -18,7 +19,8 @@ function handleBtnNextClick(fileList) {
 		document.querySelector(".js-later:checked") &&
 		(calendar.value === "" || time.value === "")
 	) {
-		console.log("Выбирите дату и время публикации");
+		showModal("Выбирите дату и время публикации");
+
 		return;
 	}
 
@@ -190,6 +192,25 @@ export function loadStyles(href) {
 		link.onload = () => resolve("Стили загружены");
 		link.onerror = () => reject(new Error("Не удалось загрузить стили"));
 	});
+}
+
+
+function showModal(message) {
+	let style = loadStyles("./css/modal.css");
+		let modalClone = modalPost.content.cloneNode(true);
+		modalClone.querySelector(".modal__text").textContent = message;
+		modalClone.querySelector(".modal__title").textContent = "Внимание!";
+		let btn = modalClone.querySelector(".button");
+		btn.textContent = "Ok";
+		btn.addEventListener("click", (e) => {
+			e.currentTarget.closest(".mask").remove();
+		}, { once: true })
+
+		Promise.all([style])
+			.then(() => {
+				document.body.append(modalClone);
+				document.querySelector(".modal > .button").focus();		
+			})
 }
 
 export default handleBtnNextClick;

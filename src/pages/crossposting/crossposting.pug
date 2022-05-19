@@ -28,22 +28,41 @@ block content
     div.card__slide
       img.card__img
 
-  template#modal
+
+
+
+
+  template#modalPost
     div.mask
       div.modal
-        h3.modal__title
-        p.modal__text
+        h3.modal__title Пост опубликован.
+        p.modal__text Смотрите его эффективность в <a class='modal__link' href='404.html'>статистике</a>
         div.modal__icons
-        button.button.button_stretchable.button_beautiful
+        button.button.button_stretchable.button_beautiful Готово
 
-  template#modalItem
-    div.modal-item.modal__item
-      input.input
-      button.button(type="button")
+  template#modalAccaunt
+    div.mask
+      div.modal
+        h3.modal__title Привязать аккаунт
+        div.modal__icons
+        div.modal-item.modal__item
+          input.input(placeholder="введите логин")
+          button.button(type="button") Привязать
+        div.modal-item.modal__item
+          input.input(placeholder="введите пароль")
+          button.button(type="button") Привязать
+        button.button.button_stretchable.button_beautiful.button_white Назад
+
+
 
   template#modalIcon
     div.modal__icon
       img
+
+
+
+
+
 
 
   div.crossposting

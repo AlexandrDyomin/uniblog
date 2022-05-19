@@ -1,5 +1,9 @@
 extends layouts/layout
 
+block scripts
+  script(src="js/index.js" defer)
+
+    
 block styles
   link(rel="stylesheet" href="css/index.css")
 
@@ -7,9 +11,6 @@ block variables
   - let title = "Uniblog"
   - let name = "Друг"
 
-block scripts
-  script(src="js/vendors-node_modules_chart_js_auto_auto_esm_js.js")
-  script(src="js/index.js" defer)
 
 block mixins
   include blocks/custom-btn/custom-btn
@@ -95,7 +96,7 @@ block content
             span.uniblog__number 1,000
         .uniblog__card
           .uniblog__icon.uniblog__icon_trend
-          a(href="#").uniblog__text.uniblog__text_link Узнайте, что находится в тренде сегодня
+          a(href="404.html").uniblog__text.uniblog__text_link Узнайте, что находится в тренде сегодня
     footer.uniblog__footer
       ul.uniblog__list
         li.uniblog__list-item

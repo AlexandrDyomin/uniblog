@@ -3,15 +3,7 @@ function handleBtnPublicClick(formData) {
 	let networks = formData.getAll("network");
 	let iconDir = "../images/";
 
-	let title = modal.content.querySelector(".modal__title");
-	let text = modal.content.querySelector(".modal__text");
-	let button = modal.content.querySelector(".button");
-	title.textContent = "Пост опубликован.";
-	text.innerHTML = "Смотрите его эффективность в <a class='modal__link' href='#'>статистике</a>";
-	button.textContent = "Готово";
-
-
-	let modalClone = modal.content.cloneNode(true);
+	let modalClone = modalPost.content.cloneNode(true);
 	let icons = modalClone.querySelector(".modal__icons");
 	let img = modalIcon.content.querySelector("img");
 	for (let network of networks) {
@@ -20,16 +12,20 @@ function handleBtnPublicClick(formData) {
 		icons.append(madalIconClone);
 	}
 
-	modalClone.firstElementChild.onclick = (e) => {
-		if (e.target.classList.contains("button")) {
-			e.currentTarget.remove();
-			document.documentElement.classList.remove("no-scroll");
-			document.querySelector(".status-panel__btn").click();
-		}
-	}
+	modalClone.firstElementChild.addEventListener(
+		"click",
+		(e) => {
+			if (e.target.classList.contains("button")) {
+				e.currentTarget.remove();
+				document.documentElement.classList.remove("no-scroll");
+				document.querySelector(".status-panel__btn").click();
+			}
+		},
+		{ once: true }
+	);
 
 	document.body.append(modalClone);
-	button = document.querySelector(".modal > .button");
+	let button = document.querySelector(".modal > .button");
 	button.focus();
 }
 
