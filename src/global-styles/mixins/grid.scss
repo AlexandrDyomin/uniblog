@@ -1,8 +1,0 @@
-@mixin grid($breakpoint, $size, $margin: 15px, $columns: 12) {
-	@media (max-width: $breakpoint) {
-		& {
-			flex-basis: calc(100%/$columns * $size - $margin*2);
-			 @content;
-		}
-	}
-}

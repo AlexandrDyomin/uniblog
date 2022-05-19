@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuniblog=self.webpackChunkuniblog||[]).push([[880],{880:(e,o,s)=>{s.r(o),s.d(o,{default:()=>c});const c=function(){let e=document.querySelector(".cards"),o=e.querySelectorAll(".card__img");for(let e of o)URL.revokeObjectURL(e.src);e&&e.remove(),document.querySelector(".crossposting").classList.remove("crossposting_disabled")}}}]);

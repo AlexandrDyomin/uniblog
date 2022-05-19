@@ -1,9 +1,0 @@
-mixin custom-btn(status = "false")
-  - let attr = attributes;
-
-  div.custom-btn 
-    label.custom-btn__checkbox
-      span.custom-btn__img(class=attr.class)
-        input.custom-btn__input(type="checkbox" disabled=attr.disabled checked=attr.checked name=attr.name value=attr.value form=attr.form data-added=status)
-        span.custom-btn__style
-    button.button.button_ugly Изменить    
