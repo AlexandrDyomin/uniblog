@@ -44,7 +44,7 @@ function handleBtnNextClick(fileList) {
 
 		let networks = formData.getAll("network");
 		let text = formData.get("editor");
-		let iconDir = "../images/";
+		let iconDir = "images/";
 		let docFragment = document.createDocumentFragment();
 		let slides = document.createDocumentFragment();
 		
