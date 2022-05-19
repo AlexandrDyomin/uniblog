@@ -7,12 +7,6 @@
   user-select: none;
   background: white;
   overflow: auto;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
 
   .social-network-list__item:not(.social-network-list__item:last-child) {
     margin-right: 1.5rem;

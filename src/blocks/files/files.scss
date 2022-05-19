@@ -22,12 +22,6 @@
     display: flex;
     padding: 0 1rem;
     overflow: auto;
-    scrollbar-width: none;
-  }
-
-  &__cards::-webkit-scrollbar {
-    width: 0;
-    height: 0;
   }
 
   &__btn{

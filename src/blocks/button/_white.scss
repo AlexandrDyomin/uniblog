@@ -2,4 +2,10 @@
 	background: white;
 	border-top: 2.56px solid $borderModal;
 	color: $darkGrey;
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+		background: none;
+	}
 }

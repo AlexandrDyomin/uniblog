@@ -1,0 +1,259 @@
+@import "src/layouts/layout";
+@import "src/blocks/button/button";
+@import "src/blocks/button/_beautiful";
+@import "src/blocks/button/_with-icon";
+@import "src/blocks/button/_stretchable";
+@import "src/blocks/social-btn/social-btn";
+
+.uniblog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 2.2rem 1.6rem 2.2rem;
+
+  @media(max-width: 600px) {
+    padding: 0 1.8rem 1rem;
+  }
+
+  &__header {
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+
+  &__hello,
+  &__header > .button {
+    margin: 15px;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  &__top {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 40rem;
+    margin: 0 -12px;
+  }
+
+  &__statistic,
+  &__socials {
+    flex: 1;
+    background: white;
+    border: 0.95px solid $borderModal;
+    border-radius: 10px;
+    min-width: 275px;
+    padding: 2.6rem 2.3rem;
+    margin: 12px;
+  }
+
+  &__header-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  &__periods {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    background: none;
+    border: none;
+    width: min-content;
+    text-align: end;
+    cursor: pointer;
+  }
+
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+
+    @media(max-width: 1212px) and (min-width: 632px) {
+      flex-direction: row;
+      flex: 1;
+    }
+
+    @media(max-width: 450px) {
+      flex-direction: row;
+      flex: 1;
+    }
+
+  }
+
+  &__chart {
+    flex: 1;
+    flex-basis:285px;
+    height: 25rem;
+    padding-left: 2rem;
+  }
+
+
+  &__resume:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+
+  &__indicator {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  &__value {
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #39BD19;
+  }
+
+
+
+  &__socials {
+    .uniblog__list {
+      margin: 0 -10px;
+    }
+
+    li.uniblog__list-item {
+      margin: 10px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &__card {
+    flex: 1;
+    margin: 0.7rem;
+    min-width: 240px;
+    padding: 1rem;
+    border-radius: 10px;
+    background: $turquoise;
+    line-height: 1.2;
+  }
+
+  &__card:not(:nth-child(2)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__card:nth-child(2) {
+    display: flex;
+  }
+
+  &__btns {
+    max-width: 17rem;
+    max-height: 16rem;
+    padding: 0.5rem;
+    overflow-y: auto;
+
+    .button {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      text-align: left;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 7.6rem;
+    height: 7.6rem;
+    margin: 0 auto 0.5rem;
+    background: url("../images/users.svg") center / contain;
+
+    &_trend {
+      background: url("../images/trend.svg") center / contain;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+
+    &_link::after {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      transform: rotate(-45deg);
+      border-right: 2px solid $arrow;
+      border-bottom: 2px solid $arrow;
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__number {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+
+  &__footer {
+    flex: 0 0;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: $darkGrey;
+    background: white;
+    box-shadow: 0px -2px 0px 0px #dddcdf;
+    border-radius: 8px;
+    padding: 2.8rem 2.4rem 0.8rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__list-item {
+    margin-bottom: 2rem;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-right: 5.5rem;
+  }
+
+  &__list-item:nth-child(3) {
+    margin-right: auto;
+  }
+}

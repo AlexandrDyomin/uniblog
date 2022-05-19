@@ -169,4 +169,5 @@ exports.default = series(
 exports.build = series(
   cleanDist,
   parallel(compileMarkup, compileStyles, processScripts, compressImg, processFonts),
+  parallel(runServer, runWatcher)
 );

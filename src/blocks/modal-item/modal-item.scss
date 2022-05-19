@@ -1,5 +1,6 @@
 .modal-item {
 	display: flex;
+	margin: 0 3rem;
 
 	.input {
 		flex: 1;
@@ -9,6 +10,7 @@
 		font-size: 1.5rem;
 		line-height: 1.2;
 		color: $lightGrey2;
+		width: 70%;
 
 		&:focus {
 			outline-offset: -3px;

@@ -1,22 +1,92 @@
-  .button_with-icon {
-    padding-left: 4.6rem;
-    padding-right: 2.6rem;
+.button_plus,
+.button_vk,
+.button_twitter,
+.button_telegram,
+.button_instagram,
+.button_viber,
+.button_whatsapp,
+.button_email,
+.button_call{
+  padding-left: 4.6rem;
+  padding-right: 2.6rem;
 
-    position: relative;
+  position: relative;
 
-    &::before {
-      content:"";
+  &::before {
+    content:"";
 
-      height: 1.4rem;
-      width: 1.4rem;
-      margin-left: 2.6rem;
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-left: 1.6rem;
 
-      position: absolute;
-      top:50%;
-      left:0;
-      transform: translateY(-50%);
-
-      background: url("mixins/button/images/plus.svg") no-repeat center;
-      background-size: cover;
-    }
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
   }
+}
+
+
+@mixin icon($src, $color:$blue) {
+  background: $color;
+  &:hover {
+    background-color: darken($color, $amount: 5%);
+    box-shadow: 0 0 0.5rem 0.1rem $color;
+  }
+
+  &::before{
+    background: url($src) no-repeat center / cover;
+  }
+
+  &:focus {
+    background-color: darken($color, $amount: 5%);
+  }
+}
+
+
+.button_plus {
+  @include icon("../images/plus.svg");
+
+  &::before {
+    margin-left: 2.6rem;
+  }
+}
+
+.button_vk {
+  @include icon("../images/vk_white.svg", rgb(26, 13, 171));
+}
+
+
+.button_twitter {
+  @include icon("../images/twitter_white.svg", rgb(7, 120, 155));
+}
+
+
+.button_telegram {
+  @include icon("../images/telegram_white.svg", #2d3950);
+}
+
+
+.button_instagram {
+  @include icon("../images/instagram_white.svg", #bc1888);
+}
+
+
+
+.button_viber{
+  @include icon("../images/viber_white.svg", #8f5db7);
+}
+
+
+.button_whatsapp {
+  @include icon("../images/whatsapp_white.svg",  #43d854);
+}
+
+
+.button_email{
+  @include icon("../images/email.svg", #323232); 
+}
+
+.button_call{
+  @include icon("../images/phone.svg", #ead61c); 
+}
