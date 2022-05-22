@@ -18,8 +18,7 @@ block mixins
 block content
   .uniblog
     header.uniblog__header
-      // .uniblog__hello= name ? "Привет, " + name + "!" : "Привет,Имя!"
-      .uniblog__hello= "Здорова брат! Денег вышли мне, ладно"
+      .uniblog__hello= name ? "Привет, " + name + "!" : "Привет,Имя!"
       a.button.button_beautiful.button_plus(href="crossposting.html")  Добавить новый пост
 
     main
